@@ -1,0 +1,37 @@
+import 'package:final_project_pantrypal/screen/home_screen.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      useMaterial3: true,
+      ),
+      home: HomeScreen()
+    );
+  }
+}
+
+/// ___________ FOOD RECIPES ______________ ///
+/// API also Integrate
+/// Simple
+/// Steps 1
+/// Project Setup => DONE
+/// Steps 2
+/// create custom text style => DONE
+///
+/// STEPS 3
+/// create model => done
+/// steps 4
+/// hit api and display data
