@@ -5,6 +5,7 @@ import 'package:final_project_pantrypal/domain/custom_text_style.dart';
 import 'package:final_project_pantrypal/screen/recipes_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:lottie/lottie.dart';
 
 import '../model/recipes_model.dart';
 
@@ -69,7 +70,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   future: hitRecipesApi(),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState) {
-                      return const Center(child: CircularProgressIndicator());
+                      return Center(child: Lottie.asset("assets/images/Loading animation.json") ,
+                      );
                     } else if (snapshot.hasError) {
                       return Center(
                         child: Text("Error Found : ${snapshot.error}"),
