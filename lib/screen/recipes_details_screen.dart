@@ -264,7 +264,7 @@ class _RecipesDetailsScreenState extends State<RecipesDetailsScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Image.asset(
-                                      "assets/icons/whisk.png",
+                                      "assets/icons/book.png",
                                       height: 60,
                                     ),
                                     Text(
@@ -290,7 +290,7 @@ class _RecipesDetailsScreenState extends State<RecipesDetailsScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Image.asset(
-                                      "assets/icons/cooking.png",
+                                      "assets/icons/whisk.png",
                                       height: 60,
                                     ),
                                     Text(
