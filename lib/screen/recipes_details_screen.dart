@@ -87,27 +87,111 @@ class _RecipesDetailsScreenState extends State<RecipesDetailsScreen> {
                           ),
                           Positioned(
                             right: 10,
-                              top: 30,
-                              child: Image.asset("assets/icons/heart.png", height : 40 , width: 40, )),
+                            top: 30,
+                            child: Image.asset(
+                              "assets/icons/heart.png",
+                              height: 40,
+                              width: 40,
+                            )),
+                          Positioned(
+                            top: 40,
+                            child: Row(
+                              children: [
 
+                                /// people and rev count
+                                Container(
+                                  width: myData!.size.width*0.15,
+                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(12) , border: Border.all(width: 2 , color: Colors.orangeAccent)),
+                                  child: Row(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      const Icon(Icons.person) ,
+                                      Text(widget.revCount , style: myTextStyle18(),)
+                                    ],
+                                  ),
+                                ),
+
+                                const SizedBox(width: 10,),
+                                /// star and rating
+                                Container(
+                                  width: myData!.size.width*0.18,
+                                  decoration: BoxDecoration(
+                                    color: Colors.orange.shade100.withOpacity(0.5) ,
+                                    borderRadius: BorderRadius.circular(8) ,
+                                    border: Border.all(color: Colors.orange.shade200 , width: 2)
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      const Icon(Icons.star , color: Colors.orangeAccent) ,
+                                      Text(widget.rating , style: myTextStyle18(),)
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),
 
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.black12
+                        Expanded(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.black12.withOpacity(0.06),
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  "assets/icons/whisk.png",
+                                  height: 60,
+                                ),
+                                Text(
+                                  "${widget.prepTime} min",
+                                  style: myTextStyle36(),
+                                ),
+                                Text(
+                                  "Preparation Time",
+                                  style: myTextStyle18(textFamily: "secondary"),
+                                ),
+                              ],
+                            ),
                           ),
-                          child: Column(
-                            children: [
-                              Image.asset("assets/icons/whisk.png" , height: 60,)
-                            ],
+                        ),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.black12.withOpacity(0.06),
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  "assets/icons/cooking.png",
+                                  height: 60,
+                                ),
+                                Text(
+                                  "${widget.cookTime} min",
+                                  style: myTextStyle36(),
+                                ),
+                                Text(
+                                  "Cooking Time",
+                                  style: myTextStyle18(textFamily: "secondary"),
+                                ),
+                              ],
+                            ),
                           ),
-                        )
+                        ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
