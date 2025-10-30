@@ -12,6 +12,7 @@ class RecipesDetailsScreen extends StatefulWidget {
   String foodType;
   String difficultLevel;
   String cuisine;
+  List<String> ingredientsList;
 
   RecipesDetailsScreen({
     super.key,
@@ -25,6 +26,7 @@ class RecipesDetailsScreen extends StatefulWidget {
     required this.rating,
     required this.cuisine,
     required this.revCount,
+    required this.ingredientsList,
   });
 
   @override
@@ -63,6 +65,7 @@ class _RecipesDetailsScreenState extends State<RecipesDetailsScreen> {
               ),
             ),
           ),
+          ///info
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
@@ -75,234 +78,255 @@ class _RecipesDetailsScreenState extends State<RecipesDetailsScreen> {
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 10),
-                    SizedBox(
-                      width: myData!.size.width,
-                      height: myData!.size.height * 0.16,
-                      child: Stack(
-                        children: [
-                          /// title
-                          Text(
-                            widget.title,
-                            style: myTextStyle24(textWeight: FontWeight.bold),
-                          ),
-
-                          /// heart icon
-                          Positioned(
-                            right: 10,
-                            top: 30,
-                            child: Image.asset(
-                              "assets/icons/heart.png",
-                              height: 40,
-                              width: 40,
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 10),
+                      SizedBox(
+                        width: myData!.size.width,
+                        height: myData!.size.height * 0.16,
+                        child: Stack(
+                          children: [
+                            /// title
+                            Text(
+                              widget.title,
+                              style: myTextStyle24(textWeight: FontWeight.bold),
                             ),
-                          ),
-                          Positioned(
-                            top: 40,
-                            child: Row(
-                              children: [
-                                /// people and rev count
-                                Container(
-                                  width: myData!.size.width * 0.15,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      width: 2,
-                                      color: Colors.orangeAccent,
-                                    ),
-                                  ),
-                                  child: Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      const Icon(Icons.person),
-                                      Text(
-                                        widget.revCount,
-                                        style: myTextStyle18(),
-                                      ),
-                                    ],
-                                  ),
-                                ),
 
-                                const SizedBox(width: 10),
-
-                                /// star and rating
-                                Container(
-                                  width: myData!.size.width * 0.18,
-                                  decoration: BoxDecoration(
-                                    color: Colors.orange.shade100.withOpacity(
-                                      0.5,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8),
-                                    border: Border.all(
-                                      color: Colors.orange.shade200,
-                                      width: 2,
-                                    ),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      const Icon(
-                                        Icons.star,
+                            /// heart icon
+                            Positioned(
+                              right: 10,
+                              top: 30,
+                              child: Image.asset(
+                                "assets/icons/heart.png",
+                                height: 40,
+                                width: 40,
+                              ),
+                            ),
+                            Positioned(
+                              top: 40,
+                              child: Row(
+                                children: [
+                                  /// people and rev count
+                                  Container(
+                                    width: myData!.size.width * 0.15,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      border: Border.all(
+                                        width: 2,
                                         color: Colors.orangeAccent,
                                       ),
-                                      Text(
-                                        widget.rating,
-                                        style: myTextStyle18(),
-                                      ),
-                                    ],
+                                    ),
+                                    child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        const Icon(Icons.person),
+                                        Text(
+                                          widget.revCount,
+                                          style: myTextStyle18(),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+
+                                  const SizedBox(width: 10),
+
+                                  /// star and rating
+                                  Container(
+                                    width: myData!.size.width * 0.18,
+                                    decoration: BoxDecoration(
+                                      color: Colors.orange.shade100.withOpacity(
+                                        0.5,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8),
+                                      border: Border.all(
+                                        color: Colors.orange.shade200,
+                                        width: 2,
+                                      ),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        const Icon(
+                                          Icons.star,
+                                          color: Colors.orangeAccent,
+                                        ),
+                                        Text(
+                                          widget.rating,
+                                          style: myTextStyle18(),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
 
-                          /// other information
-                          Positioned(
-                            bottom: 16,
-                            child: SizedBox(
-                              width: myData!.size.width,
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
+                            /// other information
+                            Positioned(
+                              bottom: 16,
+                              child: SizedBox(
+                                width: myData!.size.width,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
 
-                                  ///cuisine
-                                  Expanded(
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Colors.brown,
-                                          width: 2,
+                                    ///cuisine
+                                    Expanded(
+                                      child: Container(
+                                        height: 30,
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: Colors.brown,
+                                            width: 2,
+                                          ),
+                                          borderRadius: BorderRadius.circular(8),
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          widget.cuisine,
-                                          style: myTextStyle18(
-                                            textWeight: FontWeight.w900),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(width: 10,),
-                                  /// difficult level
-                                  Expanded(
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Colors.brown,
-                                          width: 2,
-                                        ),
-                                        borderRadius: BorderRadius.circular(8),
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          widget.difficultLevel,
-                                          style: myTextStyle18(
-                                            textWeight: FontWeight.w900),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(width: 10,),
-                                  /// meal type
-                                  Expanded(
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Colors.brown,
-                                          width: 2,
-                                        ),
-                                        borderRadius: BorderRadius.circular(8),
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          widget.foodType,
-                                          style: myTextStyle18(
-                                            textWeight: FontWeight.w900,
+                                        child: Center(
+                                          child: Text(
+                                            widget.cuisine,
+                                            style: myTextStyle12(
+                                              textWeight: FontWeight.w900),
                                           ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  const SizedBox(width: 20,)
+                                    const SizedBox(width: 10,),
+                                    /// difficult level
+                                    Expanded(
+                                      child: Container(
+                                        height: 30,
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: Colors.brown,
+                                            width: 2,
+                                          ),
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            widget.difficultLevel,
+                                            style: myTextStyle12(
+                                              textWeight: FontWeight.w900),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 10,),
+                                    /// meal type
+                                    Expanded(
+                                      child: Container(
+                                        height: 30,
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: Colors.brown,
+                                            width: 2,
+                                          ),
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            widget.foodType,
+                                            style: myTextStyle12(
+                                              textWeight: FontWeight.w900,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 20,)
 
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
 
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Expanded(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.black12.withOpacity(0.06),
-                              borderRadius: BorderRadius.circular(16),
+                      SizedBox(
+                        height: 200,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Expanded(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.black12.withOpacity(0.06),
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.asset(
+                                      "assets/icons/whisk.png",
+                                      height: 60,
+                                    ),
+                                    Text(
+                                      "${widget.prepTime} min",
+                                      style: myTextStyle36(),
+                                    ),
+                                    Text(
+                                      "Preparation Time",
+                                      style: myTextStyle18(textFamily: "secondary"),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                  "assets/icons/whisk.png",
-                                  height: 60,
+                            const SizedBox(width: 10),
+                            Expanded(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.black12.withOpacity(0.06),
+                                  borderRadius: BorderRadius.circular(16),
                                 ),
-                                Text(
-                                  "${widget.prepTime} min",
-                                  style: myTextStyle36(),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.asset(
+                                      "assets/icons/cooking.png",
+                                      height: 60,
+                                    ),
+                                    Text(
+                                      "${widget.cookTime} min",
+                                      style: myTextStyle36(),
+                                    ),
+                                    Text(
+                                      "Cooking Time",
+                                      style: myTextStyle18(textFamily: "secondary"),
+                                    ),
+                                  ],
                                 ),
-                                Text(
-                                  "Preparation Time",
-                                  style: myTextStyle18(textFamily: "secondary"),
-                                ),
-                              ],
+                              ),
                             ),
-                          ),
+                          ],
                         ),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.black12.withOpacity(0.06),
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                  "assets/icons/cooking.png",
-                                  height: 60,
-                                ),
-                                Text(
-                                  "${widget.cookTime} min",
-                                  style: myTextStyle36(),
-                                ),
-                                Text(
-                                  "Cooking Time",
-                                  style: myTextStyle18(textFamily: "secondary"),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+                      ),
+                      const SizedBox(height: 12,),
+                      Text("Ingredients" ,
+                        style: myTextStyle36(),),
+                      ListView.builder(
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
+                        itemCount: widget.ingredientsList.length,
+                        itemBuilder: (context , index) {
+                        return ListTile(
+                          title: Text(widget.ingredientsList[index] , style: myTextStyle18(),),
+                        leading: Image.asset("assets/icons/check-mark.png"),);
+                      },)
+
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
+          )
         ],
       ),
     );

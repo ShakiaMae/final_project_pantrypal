@@ -159,6 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     rating:myRecipes[index].rating.toString() ,
                                                     revCount:myRecipes[index].reviewCount.toString() ,
                                                     cuisine: myRecipes[index].cuisine.toString(),
+                                                    ingredientsList: myRecipes[index].ingredients ?? [],
 
                                                   )));
                                         },
