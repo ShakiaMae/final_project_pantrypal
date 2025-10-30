@@ -31,9 +31,16 @@ class _HomeScreenState extends State<HomeScreen> {
           "KitchenCraft",
           style: myTextStyle24(
             textFamily: "secondary",
-            textColor: Colors.brown,
-          ),
+            textColor: Colors.brown),
         ),
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset("assets/icons/cook-book.png"),
+        ),
+        actions: const[
+          Icon(Icons.notifications , size: 30,),
+          SizedBox(width: 8,)
+        ],
         centerTitle: true,
         shadowColor: Colors.black12,
         elevation: 11,
@@ -107,6 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ///name
                                   Text(
                                     "${myRecipes[index].name}",
+                                    maxLines: 1,
                                     style: myTextStyle12(
                                       textColor: Colors.brown,
                                       textWeight: FontWeight.bold,
@@ -160,6 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     revCount:myRecipes[index].reviewCount.toString() ,
                                                     cuisine: myRecipes[index].cuisine.toString(),
                                                     ingredientsList: myRecipes[index].ingredients ?? [],
+                                                    instructionsList: myRecipes[index].instructions ?? [],
 
                                                   )));
                                         },
