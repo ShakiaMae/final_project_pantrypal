@@ -5,7 +5,6 @@ import 'package:final_project_pantrypal/domain/custom_text_style.dart';
 import 'package:final_project_pantrypal/screen/recipes_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:lottie/lottie.dart';
 
 import '../model/recipes_model.dart';
 
@@ -38,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.all(8.0),
           child: Image.asset("assets/icons/cook-book.png"),
         ),
-        actions: const[
+        actions: [ const
           Icon(Icons.notifications , size: 30,),
           SizedBox(width: 8,)
         ],
@@ -70,8 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   future: hitRecipesApi(),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState) {
-                      return Center(child: Lottie.asset("assets/images/Loading animation.json") ,
-                      );
+                      return const Center(child: CircularProgressIndicator());
                     } else if (snapshot.hasError) {
                       return Center(
                         child: Text("Error Found : ${snapshot.error}"),
