@@ -30,15 +30,15 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text(
           "KitchenCraft",
           style: myTextStyle24(
-            textFamily: "secondary",
-            textColor: Colors.brown),
+              textFamily: "secondary",
+              textColor: Colors.brown),
         ),
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Image.asset("assets/icons/cook-book.png"),
         ),
         actions: [ const
-          Icon(Icons.notifications , size: 30,),
+        Icon(Icons.notifications , size: 30,),
           SizedBox(width: 8,)
         ],
         centerTitle: true,
@@ -144,33 +144,33 @@ class _HomeScreenState extends State<HomeScreen> {
 
                                   Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                     children: [
                                       ///_____________VIEW BUTTON__________________///
                                       ///when click on this button navigation to the details screen
                                       ElevatedButton(
                                         onPressed: () {
                                           Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  RecipesDetailsScreen(
-                                                    imageSrc: myRecipes[index]
-                                                        .image
-                                                        .toString(),
-                                                    title: myRecipes[index].name.toString(),
-                                                    calories:myRecipes[index].caloriesPerServing.toString() ,
-                                                    cookTime:myRecipes[index].cookTimeMinutes.toString() ,
-                                                    difficultLevel:myRecipes[index].difficulty.toString() ,
-                                                    foodType:myRecipes[index].mealType.toString() ,
-                                                    prepTime:myRecipes[index].prepTimeMinutes.toString() ,
-                                                    rating:myRecipes[index].rating.toString() ,
-                                                    revCount:myRecipes[index].reviewCount.toString() ,
-                                                    cuisine: myRecipes[index].cuisine.toString(),
-                                                    ingredientsList: myRecipes[index].ingredients ?? [],
-                                                    instructionsList: myRecipes[index].instructions ?? [],
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      RecipesDetailsScreen(
+                                                        imageSrc: myRecipes[index]
+                                                            .image
+                                                            .toString(),
+                                                        title: myRecipes[index].name.toString(),
+                                                        calories:myRecipes[index].caloriesPerServing.toString() ,
+                                                        cookTime:myRecipes[index].cookTimeMinutes.toString() ,
+                                                        difficultLevel:myRecipes[index].difficulty.toString() ,
+                                                        foodType:myRecipes[index].mealType.toString() ,
+                                                        prepTime:myRecipes[index].prepTimeMinutes.toString() ,
+                                                        rating:myRecipes[index].rating.toString() ,
+                                                        revCount:myRecipes[index].reviewCount.toString() ,
+                                                        cuisine: myRecipes[index].cuisine.toString(),
+                                                        ingredientsList: myRecipes[index].ingredients ?? [],
+                                                        instructionsList: myRecipes[index].instructions ?? [],
 
-                                                  )));
+                                                      )));
                                         },
                                         style: ElevatedButton.styleFrom(
                                           shape: RoundedRectangleBorder(
@@ -179,7 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             ),
                                           ),
                                           backgroundColor:
-                                              Colors.orangeAccent.shade200,
+                                          Colors.orangeAccent.shade200,
                                           foregroundColor: Colors.brown,
                                         ),
 

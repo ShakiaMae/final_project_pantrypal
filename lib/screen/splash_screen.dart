@@ -36,17 +36,17 @@ class _SplashScreenState extends State<SplashScreen> {
             SizedBox(
               height: 60,
               child: DefaultTextStyle(
-                style: myTextStyle48(
-                  textFamily: 'secondary',
-                  textWeight: FontWeight.bold,
-                ),
-                child: AnimatedTextKit(
-                  pause: const Duration(milliseconds: 50),
-                  animatedTexts: [
-                    ScaleAnimatedText("Kitchen"),
-                    ScaleAnimatedText("Craft"),
-                  ],
-                )),
+                  style: myTextStyle48(
+                    textFamily: 'secondary',
+                    textWeight: FontWeight.bold,
+                  ),
+                  child: AnimatedTextKit(
+                    pause: const Duration(milliseconds: 50),
+                    animatedTexts: [
+                      ScaleAnimatedText("Kitchen"),
+                      ScaleAnimatedText("Craft"),
+                    ],
+                  )),
             ),
           ],
         ),

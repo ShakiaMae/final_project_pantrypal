@@ -1,3 +1,4 @@
+
 import 'package:final_project_pantrypal/domain/custom_text_style.dart';
 import 'package:flutter/material.dart';
 
@@ -123,9 +124,9 @@ class _RecipesDetailsScreenState extends State<RecipesDetailsScreen> {
                                     ),
                                     child: Row(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                      CrossAxisAlignment.center,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      MainAxisAlignment.center,
                                       children: [
                                         const Icon(Icons.person),
                                         Text(
@@ -153,7 +154,7 @@ class _RecipesDetailsScreenState extends State<RecipesDetailsScreen> {
                                     ),
                                     child: Row(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      MainAxisAlignment.center,
                                       children: [
                                         const Icon(
                                           Icons.star,
@@ -177,7 +178,7 @@ class _RecipesDetailsScreenState extends State<RecipesDetailsScreen> {
                                 width: myData!.size.width,
                                 child: Row(
                                   mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
+                                  MainAxisAlignment.spaceEvenly,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     ///cuisine
@@ -384,120 +385,120 @@ class _RecipesDetailsScreenState extends State<RecipesDetailsScreen> {
                       Text("Instructions", style: myTextStyle36()),
 
                       ListView.builder(
-                        itemCount: widget.instructionsList.length,
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: myData!.size.width * 0.4,
-                                  decoration: const BoxDecoration(
-                                    color: Colors.orangeAccent,
-                                    borderRadius: BorderRadius.only(
-                                      bottomRight: Radius.circular(20),
-                                      topRight: Radius.circular(20),
-                                      topLeft: Radius.circular(5),
-                                      bottomLeft: Radius.circular(5),
+                          itemCount: widget.instructionsList.length,
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    width: myData!.size.width * 0.4,
+                                    decoration: const BoxDecoration(
+                                      color: Colors.orangeAccent,
+                                      borderRadius: BorderRadius.only(
+                                        bottomRight: Radius.circular(20),
+                                        topRight: Radius.circular(20),
+                                        topLeft: Radius.circular(5),
+                                        bottomLeft: Radius.circular(5),
+                                      ),
                                     ),
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      const SizedBox(width: 8),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                          vertical: 3.0,
-                                        ),
-                                        child: Container(
-                                          height: 40,
-                                          width: 40,
-                                          decoration: BoxDecoration(
-                                            color: Colors.orangeAccent.shade100,
-                                            borderRadius: BorderRadius.circular(
-                                              100,
-                                            ),
-                                            border: Border.all(
-                                              width: 4,
-                                              color: Colors.brown,
-                                            ),
+                                    child: Row(
+                                      children: [
+                                        const SizedBox(width: 8),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                            vertical: 3.0,
                                           ),
-                                          child: Center(
-                                            child: Text(
-                                              "${index + 1}",
-                                              style: myTextStyle24(
-                                                textFamily: "secondary",
-                                                textColor: Colors.white,
+                                          child: Container(
+                                            height: 40,
+                                            width: 40,
+                                            decoration: BoxDecoration(
+                                              color: Colors.orangeAccent.shade100,
+                                              borderRadius: BorderRadius.circular(
+                                                100,
+                                              ),
+                                              border: Border.all(
+                                                width: 4,
+                                                color: Colors.brown,
+                                              ),
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                "${index + 1}",
+                                                style: myTextStyle24(
+                                                  textFamily: "secondary",
+                                                  textColor: Colors.white,
+                                                ),
                                               ),
                                             ),
                                           ),
                                         ),
-                                      ),
 
-                                      const SizedBox(width: 8),
+                                        const SizedBox(width: 8),
 
-                                      Text(
-                                        "Step",
-                                        style: myTextStyle24(
-                                          textColor: Colors.white,
-                                          textFamily: "secondary",
+                                        Text(
+                                          "Step",
+                                          style: myTextStyle24(
+                                            textColor: Colors.white,
+                                            textFamily: "secondary",
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(height: 8),
-
-                                Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    color: Colors.orangeAccent.shade100
-                                        .withOpacity(0.01)
-                                        .withOpacity(0.8),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        color: Colors.brown,
-                                        blurRadius: 5,
-                                        spreadRadius: 1,
-                                        offset: Offset(1.0, 1.0),
-                                      ),
-                                    ],
-                                    border: Border.all(
-                                      width: 2,
-                                      color: Colors.brown,
+                                      ],
                                     ),
                                   ),
-                                  child: Row(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.all(4.0),
-                                        child: Image.asset(
-                                          "assets/icons/arrow-right.png",
-                                          height: 40,
-                                          width: 40,
+                                  const SizedBox(height: 8),
+
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      color: Colors.orangeAccent.shade100
+                                          .withOpacity(0.01)
+                                          .withOpacity(0.8),
+                                      boxShadow: const [
+                                        BoxShadow(
+                                          color: Colors.brown,
+                                          blurRadius: 5,
+                                          spreadRadius: 1,
+                                          offset: Offset(1.0, 1.0),
                                         ),
+                                      ],
+                                      border: Border.all(
+                                        width: 2,
+                                        color: Colors.brown,
                                       ),
-                                      const SizedBox(width: 8),
-                                      Expanded(
-                                        child: Text(
-                                          widget.instructionsList[index],
-                                          style: const TextStyle(
-                                            fontSize: 18,
-                                            fontFamily: 'primary',
-                                            color: Colors.white,
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(4.0),
+                                          child: Image.asset(
+                                            "assets/icons/arrow-right.png",
+                                            height: 40,
+                                            width: 40,
                                           ),
-                                          maxLines: 3,
                                         ),
-                                      ),
-                                    ],
+                                        const SizedBox(width: 8),
+                                        Expanded(
+                                          child: Text(
+                                            widget.instructionsList[index],
+                                            style: const TextStyle(
+                                              fontSize: 18,
+                                              fontFamily: 'primary',
+                                              color: Colors.white,
+                                            ),
+                                            maxLines: 3,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          );
-                        }),
+                                ],
+                              ),
+                            );
+                          }),
 
                       const SizedBox(height: 10,),
 
